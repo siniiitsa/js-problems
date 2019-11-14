@@ -35,4 +35,4 @@ function solution(N) {
   return gaps.length ? Math.max(...gaps) : 0;
 }
 
-console.log(solution(3200));
+console.log(solution(1041)); // 5
