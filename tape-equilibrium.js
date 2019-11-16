@@ -1,4 +1,6 @@
 /*
+Codility link - https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
+
 A non-empty array A consisting of N integers is given. Array A represents numbers on a tape.
 
 Any integer P, such that 0 < P < N, splits this tape into two non-empty parts: A[0], A[1], ..., A[P − 1] and A[P], A[P + 1], ..., A[N − 1].
@@ -45,11 +47,11 @@ each element of array A is an integer within the range [−1,000..1,000].
 */
 
 function solution(A) {
-  let sum1 = A[0];
-  let sum2 = A.reduce((sum, number) => sum + number, 0) - sum1;
-  let minDiff = Math.abs(sum2 - sum1);
+  let sum1 = 0;
+  let sum2 = A.reduce((sum, number) => sum + number, 0);
+  let minDiff = Infinity;
 
-  for (let i = 1; i < A.length - 1; ++i) {
+  for (let i = 0; i < A.length - 1; ++i) {
     sum1 += A[i];
     sum2 -= A[i];
     const diff = Math.abs(sum2 - sum1);
@@ -60,4 +62,4 @@ function solution(A) {
 }
 
 const numbers = [-10, -20, -30, -40, 100];
-console.log(solution(numbers)); // 1
+console.log(solution(numbers)); // 20
