@@ -61,5 +61,5 @@ function solution(A) {
   return 1;
 }
 
-const numbers = [4, 1, 3, 2];
-console.log(solution(numbers));
+const numbers = [4, 4, 3, 2];
+console.log(solution(numbers)); // 1
