@@ -60,19 +60,19 @@ function solution(N, A) {
   let maxCounter = 0;
 
   const maximizeCounters = () => counters.fill(maxCounter);
-  const incrementCounter = (counterIndex) =>
-    maxCounter = maxCounter < ++counters[counterIndex]
-      ? counters[counterIndex]
-      : maxCounter;
+  const incrementCounter = counterIndex => ++counters[counterIndex];
 
-  A.forEach(operation =>
-    operation <= N
-      ? incrementCounter(operation - 1)
-      : maximizeCounters()
-  );
+  A.forEach(operation => {
+    if (operation <= N) {
+      const counterValue = incrementCounter(operation - 1);
+      if (counterValue > maxCounter) maxCounter = counterValue;
+    } else {
+      maximizeCounters();
+    }
+  });
 
   return counters;
 }
 
 const operations = [3, 4, 4, 6, 1, 4, 4]
-console.log(solution(5, operations));
+console.log(solution(5, operations)); // [ 3, 2, 2, 4, 2 ]
