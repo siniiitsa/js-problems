@@ -56,7 +56,7 @@ each element of array A is an integer within the range [1..N + 1].
 */
 
 function solution(N, A) {
-  const counters = new Array(N).fill(0, 0, N);
+  const counters = new Array(N).fill(0);
   let maxCounter = 0;
 
   const maximizeCounters = () => counters.fill(maxCounter);
