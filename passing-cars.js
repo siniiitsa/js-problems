@@ -49,7 +49,7 @@ function solution(A) {
   let increaseBy = 0;
 
   for (let car of A) {
-    if (car === eastCar)++increaseBy;
+    if (car === eastCar) increaseBy++;
     if (car === westCar && increaseBy > 0)
       passingCars += increaseBy;
   }
