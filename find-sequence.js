@@ -1,5 +1,5 @@
-const createMatrix = (sequence) => {
-  const side = Math.sqrt(sequence.length);
+const createMatrix = (matrixBase) => {
+  const side = Math.sqrt(matrixBase.length);
 
   const iterate = (str, acc) => {
     if (str.length === 0) return acc;
@@ -10,7 +10,7 @@ const createMatrix = (sequence) => {
     return iterate(newStr, newAcc);
   };
 
-  return iterate(sequence, []);
+  return iterate(matrixBase, []);
 };
 
 const findSequence = (matrix, word) => {
