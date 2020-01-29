@@ -72,12 +72,8 @@ const sequenceToString = (sequence) =>
 const [matrixBase, word] = process.argv.slice(2);
 
 // creates matrix from a given string and find target sequence
-const matrix = createMatrix(matrixBase);
-const sequence = findSequence(matrix, word);
+const matrix = createMatrix(matrixBase || 'QLGNAEKIRLRNGEAE');
+const sequence = findSequence(matrix, word || 'KING');
 
-// displays matrix in the console
-console.log('MATRIX:');
-matrix.forEach(row => console.log(row));
-
-// displays found sequence in the console
+console.table(matrix)
 console.log('SEQUENCE:', sequenceToString(sequence));
