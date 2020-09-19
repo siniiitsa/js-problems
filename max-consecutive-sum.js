@@ -7,8 +7,8 @@ const getMaxSum = (numbers) => {
 
   for (let i = 0; i < numbers.length; i += 1) {
     for (let k = i + 1; k <= numbers.length; k += 1) {
-      const nums = numbers.slice(i, k);
-      sums.push(getSum(nums));
+      const currentSequence = numbers.slice(i, k);
+      sums.push(getSum(currentSequence));
     }
   }
 
